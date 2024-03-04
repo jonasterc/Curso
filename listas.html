@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de HTML Semântico</title>
+    <style>
+        /* Estilos opcionais para melhorar a aparência */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, main, footer {
+            margin: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        nav ul li a:hover {
+            color: blue;
+        }
+        nav ul li a.active {
+            font-weight: bold;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1;
+        }
+        nav ul li:hover > ul {
+            display: block;
+            margin-left: 110px;
+        }
+        nav ul ul li {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .numerica{list-style: decimal-leading-zero;}
+        .literal{list-style: lower-alpha;}
+        .romanos{list-style: upper-roman;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Página Inicial</a></li>
+            <li><a href="#">Sobre</a>
+                <ul>
+                    <li><a href="#">História</a></li>
+                    <li><a href="#">Equipe</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Numéricas</h2>
+            <ol class="numerica">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ol>
+            <h2>Literais</h2>
+            <ol class="literal">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ol>
+            <h2>Romanos</h2>
+            <ol class="romanos">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Sublistas</h2>
+            <ul class="">
+                <li>Web Design
+                    <ul>
+                        <li>item 1</li>
+                        <li>item 2</li>
+                        <li>item 3</li>
+                    </ul>
+                </li>
+                <li>Desenvolvimento Web
+                    <ul>
+                        <li>item 1</li>
+                        <li>item 2</li>
+                        <li>item 3</li>
+                    </ul>
+                </li>
+                <li>SEO
+                    <ul>
+                        <li>item 1</li>
+                        <li>item 2</li>
+                        <li>item 3</li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
