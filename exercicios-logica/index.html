@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do list</title>
+  <style>
+   
+    /* Remove margins and padding from the list */
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    code{ display: flex; background: #333; padding: 10px; color: #2fe900; border-radius: 6px;}
+
+    /* Style the list items */
+    ul li {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      list-style-type: none;
+      background: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+
+      /* make the list items unselectable */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Set all odd list items to a different color (zebra-stripes) */
+    ul li:nth-child(odd) {
+      background: #f9f9f9;
+    }
+
+    /* Darker background-color on hover */
+    ul li:hover {
+      background: #ddd;
+    }
+
+    /* When clicked on, add a background color and strike out text */
+    ul li.checked {
+      background: #888;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    /* Add a "checked" mark when clicked on */
+    ul li.checked::before {
+      content: '';
+      position: absolute;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      top: 10px;
+      left: 16px;
+      transform: rotate(45deg);
+      height: 15px;
+      width: 7px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Exercicios</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li>
+        <h4>1 Bom dia, Mundo!</h4>
+        <p>◦ Escreva uma função em JavaScript que mostre na tela a mensagem “Bom dia, Mundo!!!”.</p>
+        <br>
+        <code>
+                    function bomDiaMundo() {
+                        console.log("Bom dia, Mundo!!!");
+                    }
+                    bomDiaMundo();
+                </code>
+      </li>
+      <li>
+        <h4>2 Cálculo do Cubo</h4>
+        <p>◦ Crie uma função que retorne o cubo de um número fornecido pelo usuário.</p>
+        <br>
+        <code>
+                    function cubo(numero) {
+                        return numero * numero * numero;
+                    }
+                    
+                    let num = parseInt(prompt("Digite um número para calcular o cubo:"));
+                    console.log("O cubo de", num, "é", cubo(num));
+                </code>
+      </li>
+      <li>
+        <h4>3 Conversão de Temperatura</h4>
+        ◦ Implemente uma função que converta uma temperatura fornecida em graus Fahrenheit (F) para Celsius (C). Dica:
+        subtraia 32 da temperatura e multiplique o resultado por 0,5556 (ou 5/9).
+      </li>
+      <li>
+        <h4>4 Área de um Triângulo</h4>
+        ◦ Escreva uma função que calcule e retorne a área de um triângulo com base nos valores de base e altura
+        fornecidos.
+      </li>
+      <li>
+        <h4>5 Área e Perímetro de um Círculo</h4>
+        ◦ Crie uma função que encontre a área e o perímetro de um círculo, com base no raio fornecido.
+      </li>
+      <li>
+        <h4>6 Número Invertido</h4>
+        ◦ Implemente uma função que mostre na tela um número fornecido pelo usuário, mas invertido. Por exemplo, se o
+        usuário fornecer o número 875, a função deve exibir 578.
+      </li>
+      <li>
+        <h4>7 Contagem de Vogais</h4>
+        ◦ Escreva uma função que conte o número de vogais em uma string fornecida pelo usuário. Ignore vogais
+        acentuadas.
+      </li>
+      <li>
+        8 Retorno de Investimento
+        ◦ Crie uma função que informe o retorno de um investimento (montante) com base nos valores do capital inicial,
+        tempo em meses e taxa de juros mensal fornecidos pelo usuário. Use a fórmula: (M = C \cdot (1 + i)^t), onde:
+        ▪ (C) é o capital inicial investido.
+        ▪ (i) é a taxa de juros (em percentual).
+        ▪ (t) é o tempo do investimento (em meses). Exiba o resultado com duas casas decimais.
+      </li>
+      <li>
+        9 Fatorial
+        ◦ Implemente uma função que calcule e retorne o fatorial de um número inteiro fornecido pelo usuário.
+      </li>
+      <li>
+        10 Contagem de Caractere
+        ◦ Crie uma função que conte quantas vezes um caractere específico aparece em uma string. Tanto o caractere
+        quanto a string devem ser fornecidos pelo usuário.
+      </li>
+      <li>
+        11 Verificação de Número Primo
+        ◦ Escreva uma função que verifique se um número fornecido pelo usuário é primo ou não.
+      </li>
+    </ul>
+
+
+  </main>
+
+  <footer>
+
+  </footer>
+</body>
+
+</html>
