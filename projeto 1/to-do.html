@@ -1,158 +1,404 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do list</title>
-    <style>
-        body {
-  dmargin: 0;
-  min-width: 250px;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tarefas</title>
+  <style>
+    body {
+      margin: 0;
+      min-width: 250px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-image: linear-gradient(90.1deg, rgba(84, 212, 228, 1) 0.2%, rgba(68, 36, 164, 1) 99.9%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-/* Include the padding and border in an element's total width and height */
-* {
-  box-sizing: border-box;     
-}
 
-/* Remove margins and padding from the list */
-ul {
-  margin: 0;   
-  padding: 0;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* Style the list items */
-ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  list-style-type: none;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
-  
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    ul {
+      margin: 0;
+      padding: 0;
+    }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
-}
 
-/* Darker background-color on hover */
-ul li:hover {
-  background: #ddd;
-}
+    ul li {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      list-style-type: none;
+      background: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+      border-radius: 25px;
 
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-/* Add a "checked" mark when clicked on */
-ul li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-}
 
-/* Style the close button */
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-}
+    ul li:nth-child(odd) {
+      background: #f9f9f9;
+    }
 
-.close:hover {
-  background-color: #f44336;
-  color: white;
-}
 
-/* Style the header */
-.header {
-  background-color: #f44336;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-}
+    ul li:hover {
+      background: #ddd;
+    }
 
-/* Clear floats after the header */
-.header:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
-/* Style the input */
-input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
-}
+    ul li.checked {
+      background: #888;
+      color: #fff;
+      text-decoration: line-through;
+    }
 
-/* Style the "Add" button */
-.addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #d9d9d9;
-  color: #555;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-}
 
-.addBtn:hover {
-  background-color: #bbb;
-}
-             
-    </style>
+    ul li.checked::before {
+      content: '';
+      position: absolute;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      top: 10px;
+      left: 16px;
+      transform: rotate(45deg);
+      height: 15px;
+      width: 7px;
+    }
+
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 12px 16px 12px 16px;
+    }
+
+    .close:hover {
+      background-color: #f44336;
+      color: white;
+      border-radius: 25px;
+    }
+
+
+    .header {
+      background-image: radial-gradient(circle 815px at 23.4% -21.8%, rgba(9, 29, 85, 1) 0.2%, rgba(0, 0, 0, 1) 100.2%);
+      padding: 30px 40px;
+      color: white;
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      text-shadow: 2px 2px #333;
+      color: #fff;
+      text-transform: uppercase;
+      width: 390px;
+      padding: 50px 20px;
+    }
+
+    .header:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    input {
+      margin: 0;
+      border: none;
+      border-radius: 6px;
+      width: 94%;
+      padding: 10px;
+      float: left;
+      font-size: 16px;
+      margin-right: 2px;
+    }
+
+
+    .addBtn {
+      padding: 10px;
+      width: 5%;
+      background-image: radial-gradient(circle farthest-corner at 0.2% 0.5%, rgba(68, 36, 164, 1) 3.7%, rgba(84, 212, 228, 1) 92.7%);
+      color: #fff;
+      font-weight: 900;
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.6s;
+      border-radius: 6px;
+    }
+
+    .addBtn:hover {
+      background-image: radial-gradient(circle farthest-corner at 0.2% 0.5%, rgba(84, 212, 228, 1) 3.7%, rgba(68, 36, 164, 1) 92.7%);
+    }
+
+    #taskList {
+      width: 90%;
+      margin: 15px auto;
+
+    }
+
+
+
+    /******animações *****/
+
+    /*** texto **/
+    .focus-in-expand {
+      -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @-webkit-keyframes focus-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes focus-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    /*********fim texto************/
+
+    /***** bloco *****/
+    .swing-in-top-fwd {
+      -webkit-animation: swing-in-top-fwd 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+      animation: swing-in-top-fwd 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    }
+
+    /* ----------------------------------------------
+ * Generated by Animista on 2024-4-19 11:28:42
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+    /**
+ * ----------------------------------------
+ * animation swing-in-top-fwd
+ * ----------------------------------------
+ */
+    @-webkit-keyframes swing-in-top-fwd {
+      0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+      }
+    }
+
+    @keyframes swing-in-top-fwd {
+      0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+      }
+    }
+
+    /** fim bloco ****/
+
+    /*********************/
+    .tools{ 
+      float: right;  
+      padding: 10px;
+      color: #fff;
+      display: flex;
+      text-align: center;
+    flex-flow: column;
+    justify-content: space-around;
+    }
+    .tools > div{ 
+      background: #eee; 
+      border-radius: 6px; 
+      padding: 10px;
+      margin: 2px;
+      display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    }
+    .tools span{font-size: 10px; display: block;}
+    .tools > div button{ margin:2px; }
+    #darkModex {
+      background-color: rgba(84, 212, 228, 1) ;
+      border: none;
+      padding: 10px;
+      width: 10px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    #darkMode {
+      background-color: rgba(6, 57, 84, 1) ;
+      border: none;
+      padding: 10px;
+      width: 10px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #darkMode:hover {
+      background-color: #000;
+    }
+
+    .dark {
+      background-image: linear-gradient(171.8deg, rgba(5, 111, 146, 1) 13.5%, rgba(6, 57, 84, 1) 78.6%);
+
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>To do list</h1>
-    </header>
+  <header>
+    <div class="tools">
+      <span>Trocar tema</span>
+      <div>
+        <button id="darkMode"></button>
+        <button id="darkModex"></button>
+      </div>
+    </div>
+    <h1 class="focus-in-expand">Lista de tarefas</h1>
+    <div id="myDIV" class="header swing-in-top-fwd">
+      <input type="text" id="taskInput" placeholder="Adicionar tarefa...">
+      <span id="addTask" class="addBtn">+</span>
+    </div>
+  </header>
 
-    <main>
-        <div id="myDIV" class="header">
-            <h2 style="margin:5px">My To Do List</h2>
-            <input type="text" id="myInput" placeholder="Title...">
-            <span onclick="newElement()" class="addBtn">Add</span>
-        </div>
-          
-        <ul id="myUL">
-            <li>Hit the gym</li>
-            <li class="checked">Pay bills</li>
-            <li>Meet George</li>
-            <li>Buy eggs</li>
-            <li>Read a book</li>
-            <li>Organize office</li>
-        </ul>
-    </main>
+  <main>
+    <ul id="taskList">
 
-    <footer>
-        
-    </footer>
+    </ul>
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const addTask = document.getElementById("addTask");
+    const taskList = document.getElementById("taskList");
+    const closeButtons = document.getElementsByClassName("close");
+    const darkMode = document.getElementById("darkMode");
+    const darkModex = document.getElementById("darkModex");
+
+    let tasks = [];
+
+    function addTaskToList() {
+      const taskName = taskInput.value.trim();
+
+      if (taskName === "") {
+        alert("Por favor insira a tarefa!");
+        return;
+      }
+
+      const taskExists = tasks.some((task) => task.name === taskName);
+
+      if (taskExists) {
+        alert("Essa tarefa já existe!");
+        return;
+      }
+
+      const task = {
+        name: taskName,
+        completed: false,
+      };
+
+      tasks.push(task);
+      taskInput.value = "";
+
+      const li = document.createElement("li");
+      const span = document.createElement("span");
+      span.textContent = taskName;
+      li.appendChild(span);
+
+      const close = document.createElement("span");
+      close.className = "close";
+      close.textContent = "\u00D7";
+      li.appendChild(close);
+
+      taskList.appendChild(li);
+
+      close.onclick = function () {
+        const index = tasks.findIndex((task) => task.name === taskName);
+        tasks.splice(index, 1);
+        li.remove();
+      };
+
+      li.onclick = function () {
+        li.classList.toggle("checked");
+        task.completed = li.classList.contains("checked");
+      };
+    }
+
+    addTask.onclick = addTaskToList;
+
+    for (const close of closeButtons) {
+      close.onclick = function () {
+        const li = this.parentElement;
+        const taskName = li.firstChild.textContent;
+        const index = tasks.findIndex((task) => task.name === taskName);
+        tasks.splice(index, 1);
+        li.remove();
+      };
+    }
+
+    darkMode.onclick = function () {
+      document.body.classList.toggle("dark");
+    };
+    darkModex.onclick = function () {
+      document.body.classList.toggle("dark");
+    };
+  </script>
 </body>
+
 </html>
